@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2b0f12" />
+    <title>Приглашение на свидание</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app" data-state="closed">
+      <div class="bg" aria-hidden="true"></div>
+
+      <section class="stage" aria-label="Приглашение">
+        <div class="chandelier" aria-hidden="true">
+          <!-- Inline SVG (no external assets) -->
+          <svg viewBox="0 0 160 200" role="img" focusable="false">
+            <defs>
+              <radialGradient id="gold" cx="50%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#f7e7b1" stop-opacity="0.98" />
+                <stop offset="55%" stop-color="#d2a85a" stop-opacity="0.88" />
+                <stop offset="100%" stop-color="#7a4b22" stop-opacity="0.62" />
+              </radialGradient>
+              <radialGradient id="halo" cx="50%" cy="45%" r="65%">
+                <stop offset="0%" stop-color="#f7e7b1" stop-opacity="0.22" />
+                <stop offset="45%" stop-color="#d2a85a" stop-opacity="0.10" />
+                <stop offset="100%" stop-color="#d2a85a" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="goldLine" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#f7e7b1" stop-opacity="0.95" />
+                <stop offset="55%" stop-color="#d2a85a" stop-opacity="0.80" />
+                <stop offset="100%" stop-color="#7a4b22" stop-opacity="0.55" />
+              </linearGradient>
+              <radialGradient id="bulb" cx="40%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75" />
+                <stop offset="55%" stop-color="#f7e7b1" stop-opacity="0.72" />
+                <stop offset="100%" stop-color="#d2a85a" stop-opacity="0.20" />
+              </radialGradient>
+              <linearGradient id="crystal" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.70" />
+                <stop offset="55%" stop-color="#f7f0e6" stop-opacity="0.42" />
+                <stop offset="100%" stop-color="#d2a85a" stop-opacity="0.18" />
+              </linearGradient>
+              <linearGradient id="string" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#f7e7b1" stop-opacity="0.05" />
+                <stop offset="35%" stop-color="#f7e7b1" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#f7e7b1" stop-opacity="0.15" />
+              </linearGradient>
+              <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="2.4" result="b" />
+                <feColorMatrix
+                  in="b"
+                  type="matrix"
+                  values="1 0 0 0 0  0 0.92 0 0 0  0 0 0.55 0 0  0 0 0 0.55 0"
+                  result="c"
+                />
+                <feMerge>
+                  <feMergeNode in="c" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="crystalGlow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="1.6" result="b" />
+                <feColorMatrix
+                  in="b"
+                  type="matrix"
+                  values="1 0 0 0 0  0 0.95 0 0 0  0 0 0.70 0 0  0 0 0 0.35 0"
+                  result="c"
+                />
+                <feMerge>
+                  <feMergeNode in="c" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Warm halo behind chandelier -->
+            <ellipse cx="80" cy="120" rx="64" ry="66" fill="url(#halo)" />
+            <!-- Chain -->
+            <path d="M80 0v34" stroke="url(#string)" stroke-width="2" stroke-linecap="round" />
+            <circle cx="80" cy="40" r="4" fill="#d7b46a" />
+
+            <!-- Main stem -->
+            <path
+              d="M80 40c-4 8-6 16-6 24 0 8 2 14 6 20 4-6 6-12 6-20 0-8-2-16-6-24Z"
+              fill="url(#gold)"
+              stroke="#f0d38a"
+              stroke-opacity="0.22"
+            />
+            <path d="M80 78v10" stroke="url(#goldLine)" stroke-width="4" stroke-linecap="round" opacity="0.9" />
+
+            <!-- Crown bowl -->
+            <path
+              d="M52 92c10-14 20-20 28-20s18 6 28 20c6 9 10 16 10 22 0 16-16 28-38 28s-38-12-38-28c0-6 4-13 10-22Z"
+              fill="url(#gold)"
+              stroke="#f0d38a"
+              stroke-opacity="0.26"
+              stroke-width="1.2"
+            />
+            <path
+              d="M60 98c7-10 14-14 20-14s13 4 20 14c4 6 7 10 7 14 0 10-13 18-27 18s-27-8-27-18c0-4 3-8 7-14Z"
+              fill="#ffffff"
+              fill-opacity="0.07"
+            />
+
+            <!-- Arms -->
+            <g fill="none" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+              <path d="M80 96c-10 0-20 6-28 16" />
+              <path d="M80 96c10 0 20 6 28 16" />
+              <path d="M80 100c-14 4-24 14-30 26" />
+              <path d="M80 100c14 4 24 14 30 26" />
+              <path d="M80 98c0 0 0 10 0 18" />
+            </g>
+            <g fill="none" stroke="#f7e7b1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+              <path d="M80 96c-10 0-20 6-28 16" />
+              <path d="M80 96c10 0 20 6 28 16" />
+              <path d="M80 100c-14 4-24 14-30 26" />
+              <path d="M80 100c14 4 24 14 30 26" />
+            </g>
+
+            <!-- Candle holders + bulbs -->
+            <g opacity="0.98">
+              <g>
+                <path d="M48 120v14" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="48" cy="118" rx="6" ry="8" fill="url(#bulb)" filter="url(#softGlow)" />
+                <path d="M48 110c2 2 2 6 0 8" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
+              </g>
+              <g>
+                <path d="M112 120v14" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="112" cy="118" rx="6" ry="8" fill="url(#bulb)" filter="url(#softGlow)" />
+                <path d="M112 110c2 2 2 6 0 8" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
+              </g>
+              <g>
+                <path d="M80 124v16" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="80" cy="122" rx="6" ry="8" fill="url(#bulb)" filter="url(#softGlow)" />
+                <path d="M80 114c2 2 2 6 0 8" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
+              </g>
+              <g>
+                <path d="M44 140v12" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="44" cy="138" rx="6" ry="8" fill="url(#bulb)" filter="url(#softGlow)" />
+              </g>
+              <g>
+                <path d="M116 140v12" stroke="url(#goldLine)" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="116" cy="138" rx="6" ry="8" fill="url(#bulb)" filter="url(#softGlow)" />
+              </g>
+            </g>
+
+            <!-- Crystals -->
+            <g fill="url(#crystal)" stroke="#f7e7b1" stroke-opacity="0.22" stroke-width="1" filter="url(#crystalGlow)">
+              <path d="M66 142l4 10-4 10-4-10 4-10Z" />
+              <path d="M80 146l5 12-5 12-5-12 5-12Z" />
+              <path d="M94 142l4 10-4 10-4-10 4-10Z" />
+              <path d="M54 152l3 8-3 8-3-8 3-8Z" />
+              <path d="M106 152l3 8-3 8-3-8 3-8Z" />
+            </g>
+
+            <!-- Tiny sparkle dots -->
+            <g fill="#f7e7b1" fill-opacity="0.82">
+              <circle cx="60" cy="110" r="2" />
+              <circle cx="100" cy="110" r="2" />
+              <circle cx="80" cy="88" r="2" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="titles">
+          <h1 class="title">Приглашение</h1>
+          <p class="subtitle">на свидание</p>
+        </div>
+
+        <div class="sealWrap">
+          <button class="seal" type="button" id="openBtn" aria-controls="details" aria-expanded="false">
+            <span class="sealInner" aria-hidden="true"></span>
+            <span class="sealText">Открыть</span>
+          </button>
+        </div>
+
+        <footer class="footer">
+          <span class="footnote" id="fromText"></span>
+        </footer>
+      </section>
+
+      <section class="overlay" id="details" aria-live="polite" role="dialog" aria-modal="true">
+        <div class="sheet">
+          <div class="sheetOrnament" aria-hidden="true">
+            <svg viewBox="0 0 420 260" role="presentation" focusable="false">
+              <path d="M388 14c-42 18-78 42-104 74-27 32-36 72-26 110 9 34 33 54 67 61 31 6 66-1 96-20" fill="none" stroke="rgba(43, 15, 18, 0.45)" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M404 228l18-10-8 18" fill="none" stroke="rgba(43, 15, 18, 0.45)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="wax" aria-hidden="true">
+              <span class="waxInner" aria-hidden="true"></span>
+              <span class="waxHeart" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <h2 class="detailsTitle" id="detailsTitle">Для тебя</h2>
+          <p class="detailsSub" id="detailsSub"></p>
+          <div class="divider" aria-hidden="true"></div>
+
+          <div class="timelineBlock" aria-label="План вечера">
+            <div class="timelineTitle">Программа</div>
+            <ul class="timeline" id="timelineList"></ul>
+          </div>
+
+          <dl class="kv">
+            <div class="row">
+              <dt>Когда</dt>
+              <dd id="whenText">—</dd>
+            </div>
+            <div class="row">
+              <dt>Где</dt>
+              <dd>
+                <div class="whereName" id="whereText">—</div>
+                <a class="whereLink" id="whereLink" href="#" target="_blank" rel="noopener noreferrer">
+                  Открыть в 2GIS
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <section class="dress" aria-label="Дресс-код">
+            <div class="dressRule" aria-hidden="true"></div>
+            <div class="dressTitle">Dress-code</div>
+            <div class="dressDesc" id="dressDesc"></div>
+
+            <div class="dressNote">
+              <div class="dressNoteTop">Однако…</div>
+              <div class="dressNoteMain" id="dressText"></div>
+            </div>
+            <div class="dressRule" aria-hidden="true"></div>
+          </section>
+
+          <p class="message" id="messageText"></p>
+
+          <div class="mapBlock" aria-label="Карта">
+            <div class="mapTitle">Карта</div>
+            <div class="mapWrap">
+              <iframe
+                id="mapFrame"
+                title="Карта места встречи"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <button class="btn secondary" type="button" id="closeBtn">Закрыть</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
